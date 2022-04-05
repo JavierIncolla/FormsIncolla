@@ -1,0 +1,49 @@
+<form class="row g-3" [formGroup]="formularioInscripcion" (ngSubmit)="submit()">
+  <div class="col-md-12">
+    <label class="form-label"> Nombre</label>  
+    <input type="text" class="form-control" name="nombre" formControlName="nombre" [ngClass]="formularioInscripcion.get('nombre')?.errors?.['required'] ? 'is-invalid' : 'is-valid'">
+    <div *ngIf="formularioInscripcion.get('nombre')?.invalid && (formularioInscripcion.get('nombre')?.dirty || formularioInscripcion.get('nombre')?.touched)" class="alert alert-danger">
+      <div *ngIf="formularioInscripcion.get('nombre')?.errors?.['required']" >
+        El nombre es requerido
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <label class="form-label"> Apellido</label>  
+    <input type="text" class="form-control" name="apellido" formControlName="apellido" [ngClass]="formularioInscripcion.get('apellido')?.errors?.['required'] ? 'is-invalid' : 'is-valid'">
+    <div *ngIf="formularioInscripcion.get('apellido')?.invalid && (formularioInscripcion.get('apellido')?.dirty || formularioInscripcion.get('apellido')?.touched)" class="alert alert-danger">
+      <div *ngIf="formularioInscripcion.get('apellido')?.errors?.['required']" >
+        El apellido es requerido
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <label class="form-label"> E-mail</label>  
+    <input type="text" class="form-control" name="email" formControlName="email" [ngClass]="formularioInscripcion.get('email')?.errors?.['required'] ? 'is-invalid' : 'is-valid'">
+    <div *ngIf="formularioInscripcion.get('email')?.invalid && (formularioInscripcion.get('email')?.dirty || formularioInscripcion.get('email')?.touched)" class="alert alert-danger">
+      <div *ngIf="formularioInscripcion.get('email')?.errors?.['required']" >
+        El e-mail es requerido
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <label class="form-label"> Edad</label>  
+    <input type="number" class="form-control" name="edad" formControlName="edad" [ngClass]="formularioInscripcion.get('edad')?.errors?.['required'] ? 'is-invalid' : 'is-valid'">
+    <div *ngIf="formularioInscripcion.get('edad')?.invalid && (formularioInscripcion.get('edad')?.dirty || formularioInscripcion.get('edad')?.touched)" class="alert alert-danger">
+      <div *ngIf="formularioInscripcion.get('edad')?.errors?.['required']" >
+        La edad es requerido
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <label class="form-label">Ciudad</label>  
+    <input type="text" class="form-control" name="ciudad" formControlName="ciudad" [ngClass]="formularioInscripcion.get('ciudad')?.errors?.['required'] ? 'is-invalid' : 'is-valid'">
+    <div *ngIf="formularioInscripcion.get('ciudad')?.invalid && (formularioInscripcion.get('ciudad')?.dirty || formularioInscripcion.get('ciudad')?.touched)" class="alert alert-danger">
+      <div *ngIf="formularioInscripcion.get('ciudad')?.errors?.['required']" >
+        La ciudad es requerido
+      </div>
+    </div>
+  </div>
+   
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
